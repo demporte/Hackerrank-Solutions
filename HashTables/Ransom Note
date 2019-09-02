@@ -1,0 +1,41 @@
+ static void checkMagazine(String[] magazine, String[] note) {
+       Hashtable<String,Integer> hash = new Hashtable<String,Integer>();
+        boolean useable = false;
+        int count = 0;
+        for(int i=0;i<note.length;i++){
+            if(!hash.containsKey(note[i])){
+                hash.put(note[i],-1);
+
+            }else{
+            hash.put(note[i], hash.get(note[i])-1);
+            }
+        }
+
+        //System.out.println(hash);
+
+        for(int j=0; j<magazine.length;j++){
+           if(hash.containsKey(magazine[j])){
+                hash.put(magazine[j],hash.get(magazine[j])+1);
+            }
+        }
+         
+         
+         //System.out.println(hash);
+
+        for(Integer value: hash.values()){
+            if(value >= 0){
+                useable = true;
+                continue;
+            }else{
+                useable = false;
+                break;
+            }
+                
+        }
+        if(useable){
+            System.out.println("Yes");
+        }else{
+            System.out.println("No");
+        }
+    }  
+    
