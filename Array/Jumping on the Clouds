@@ -1,0 +1,17 @@
+  static int jumpingOnClouds(int[] c) {
+
+        int min_jumps = c.length-1;
+        int i = 0;
+        while(i< c.length-2){
+            if(c[i] ==0 && c[i+2] == 0){
+                min_jumps--;
+               
+                i = i+2;
+                System.out.println("min_jumps: " + min_jumps + "i: " + i);
+            }else{
+             i++;
+            }
+        }
+
+        return(min_jumps);
+    }
