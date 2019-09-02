@@ -1,0 +1,24 @@
+ static long repeatedString(String s, long n) {
+        long count=0;
+        long amount; 
+        long rem;
+        
+        for(int j = 0; j<s.length();j++){
+            if(s.charAt(j) == 'a'){
+                count++; 
+            }
+        }
+
+        amount = n/s.length();
+        rem = n%s.length();
+
+        count = amount*count;
+
+        for(int i = 0; i<rem; i++){
+            if(s.charAt(i) == 'a'){
+                count++;
+            }
+        }
+         
+        return count;
+    }w
